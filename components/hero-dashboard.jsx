@@ -4,8 +4,8 @@ import Link from "next/link";
 export default function HeroDashboard() {
   return (
     <>
-      <div className="w-full flex justify-between gap-12 px-[15%] py-12 text-zinc-950 transition-colors dark:text-zinc-50">
-        <div className="w-1/4 flex flex-col justify-between gap-6">
+      <div className="w-full flex flex-col md:flex-row justify-between gap-12 px-6 md:px-[15%] py-12 text-zinc-950 transition-colors dark:text-zinc-50">
+        <div className="w-full md:w-1/4 flex flex-col justify-between gap-6">
           <div>
             <p
               style={{
@@ -60,7 +60,7 @@ export default function HeroDashboard() {
             Comece agora
           </Link>
         </div>
-        <div className="w-2/4 h-[100%]">
+        <div className="w-full md:w-2/4 h-[100%]">
           <Image
             className="h-[100%] object-cover! transition-transform duration-300"
             src="/orbis_dashboard_hero.svg"

@@ -233,10 +233,36 @@ export default function HomePage() {
           0%, 100% { transform: translateY(0); }
           50% { transform: translateY(-8px); }
         }
+        @media (max-width: 768px) {
+          .hero-section {
+            flex-direction: column !important;
+            padding: 110px 6% 60px !important;
+          }
+          .hero-spline {
+            display: none !important;
+          }
+          .quote-section {
+            height: auto !important;
+            padding: 32px 6% !important;
+          }
+          .quote-inner {
+            flex-direction: column !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            gap: 16px !important;
+          }
+          .quote-text {
+            width: 100% !important;
+          }
+          .quote-img {
+            display: none !important;
+          }
+        }
       `}</style>
 
       {/* ══ HERO ══ */}
       <section
+        className="hero-section"
         style={{
           href: "#inicio",
           minHeight: "85vh",
@@ -266,6 +292,7 @@ export default function HomePage() {
 
         {/* glow blob */}
         <div
+          className="hero-spline"
           style={{
             position: "relative",
             width: "540px",
@@ -489,6 +516,7 @@ export default function HomePage() {
 
       {/* ══ QUOTE ══ */}
       <section
+        className="quote-section"
         style={{
           height: "30dvh",
           background: palette.quoteBg,
@@ -498,6 +526,7 @@ export default function HomePage() {
       >
         <div
           ref={quoteRef}
+          className="quote-inner"
           style={{
             display: "flex",
             maxWidth: "100%",
@@ -514,7 +543,7 @@ export default function HomePage() {
             transition: "opacity 0.7s ease, transform 0.7s ease",
           }}
         >
-          <div className="w-3/5 h-auto">
+          <div className="quote-text w-3/5 h-auto">
             <p
               style={{
                 fontFamily: "'Poppins', sans-serif",
@@ -543,7 +572,7 @@ export default function HomePage() {
               <strong style={{ color: "#212121" }}>Junte-se à Orbis</strong>
             </p>
           </div>
-          <img className="h-full" src="/banner_hero.svg" alt="" />
+          <img className="quote-img h-full" src="/banner_hero.svg" alt="" />
         </div>
       </section>
 
