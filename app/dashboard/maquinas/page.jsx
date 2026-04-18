@@ -59,7 +59,7 @@ function IntegridadeBar({ value }) {
   )
 }
 
-export default function MaquinasContent() {
+function MaquinasContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const { maquinas, adicionarMaquina, editarMaquina, excluirMaquina } = useMaquinas()
