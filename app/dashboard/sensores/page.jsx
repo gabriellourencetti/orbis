@@ -67,7 +67,7 @@ function LeituraCell({ valor, unidade, limiteMin, limiteMax }) {
   )
 }
 
-export default function SensoresPage() {
+function SensoresContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const { sensores, adicionarSensor, editarSensor, excluirSensor } = useSensores()
@@ -440,5 +440,13 @@ export default function SensoresPage() {
 
       </div>
     </>
+  )
+}
+
+export default function SensoresPage() {
+  return (
+    <React.Suspense fallback={null}>
+      <SensoresContent />
+    </React.Suspense>
   )
 }

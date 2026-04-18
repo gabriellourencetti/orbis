@@ -81,7 +81,7 @@ function StatusTecnicoBadge({ value }) {
 
 
 
-export default function TecnicosPage() {
+function TecnicosContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const { tecnicos, adicionarTecnico, editarTecnico, excluirTecnico } = useTecnicos()
@@ -527,5 +527,13 @@ export default function TecnicosPage() {
 
       </div>
     </>
+  )
+}
+
+export default function TecnicosPage() {
+  return (
+    <React.Suspense fallback={null}>
+      <TecnicosContent />
+    </React.Suspense>
   )
 }
