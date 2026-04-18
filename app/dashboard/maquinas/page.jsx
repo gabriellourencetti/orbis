@@ -59,7 +59,7 @@ function IntegridadeBar({ value }) {
   )
 }
 
-export default function MaquinasPage() {
+export default function MaquinasContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const { maquinas, adicionarMaquina, editarMaquina, excluirMaquina } = useMaquinas()
@@ -405,5 +405,13 @@ export default function MaquinasPage() {
 
       </div>
     </>
+  )
+}
+
+export default function MaquinasPage() {
+  return (
+    <React.Suspense fallback={null}>
+      <MaquinasContent />
+    </React.Suspense>
   )
 }
